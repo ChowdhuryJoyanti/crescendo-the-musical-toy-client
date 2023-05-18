@@ -1,5 +1,8 @@
 import React from 'react';
 import logo from '../../../assets/logo2.jpg'
+import pImage from '../../../assets/user-2.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -28,7 +31,9 @@ const NavBar = () => {
                         </ul>
                     </div>
                     {/* <a className="btn btn-ghost normal-case text-xl">daisyUI</a> */}
+             
                     <img className="w-20 h-20 rounded-full" src={logo} alt="" />
+                           <a className="btn btn-ghost normal-case text-xl">Rhythmic Melody Studio</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -50,7 +55,7 @@ const NavBar = () => {
                 <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full flex-grow">
-                            <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            <img src={pImage}/>
                         </div>
                     </label>
                     <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
@@ -73,7 +78,7 @@ const NavBar = () => {
 
 
 
-
+            {/* background-color: #B68C5A; */}
 
 
 
