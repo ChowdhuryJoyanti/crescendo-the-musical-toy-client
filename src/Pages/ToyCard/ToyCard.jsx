@@ -25,12 +25,14 @@ const ToyCard = ({ toy }) => {
                 <TabPanel value="3">Item Three</TabPanel>
             </TabContext> */}
 
+                <h2>Sub Category</h2>
 
 
             <Tabs>
                 <TabList>
-                    <Tab>Title 1</Tab>
-                    <Tab>Title 2</Tab>
+                    <Tab>Category</Tab>
+                    <Tab>Sub Category</Tab>
+                    <Tab>Tabs</Tab>
                 </TabList>
 
                 <TabPanel>
