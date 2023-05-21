@@ -9,6 +9,9 @@ import pImage from '../../../assets/user-2.png'
 const NavBar = () => {
     return (
         <container>
+            <div>
+              <h1 className='text-center text-amber-500'> <a className="btn btn-ghost normal-case text-6xl font-extrabold">Rhythmic Melody Studio</a></h1>
+              </div>
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
