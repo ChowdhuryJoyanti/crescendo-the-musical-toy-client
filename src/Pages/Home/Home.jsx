@@ -3,6 +3,7 @@ import Banner from '../Banner/Banner';
 import { useLoaderData } from 'react-router-dom';
 import ToyCard from '../ToyCard/ToyCard';
 import Galary from '../Galary/Galary';
+import Category from '../Category/Category';
 
 const Home = () => {
 
@@ -11,7 +12,10 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Galary></Galary>
-         <h3>Shop By Category {toys.length}</h3>
+            <Category></Category>
+
+
+         {/* <h3>Shop By Category {toys.length}</h3>
         
 
         {
@@ -21,7 +25,7 @@ const Home = () => {
             
             
             ></ToyCard>)
-        }
+        } */}
         </div>
     );
 };

@@ -3,10 +3,10 @@ import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
-const ToyCard = ({ toy }) => {
+const ToyCard = () => {
 
-
-    const { name, price, seller, email, category, subCategory, details, quantity, rating, photo } = toy;
+    // { category }
+    // const { name, price, seller, email, category, subCategory, details, quantity, rating, photo } = NewCategory;
 
 
 
@@ -25,10 +25,10 @@ const ToyCard = ({ toy }) => {
                 <TabPanel value="3">Item Three</TabPanel>
             </TabContext> */}
 
-                <h2>Sub Category</h2>
+                {/* <h2>Sub Category</h2> */}
 
 
-            <Tabs>
+            {/* <Tabs defaultIndex={0} onSelect={(index) => console.log(index)}>
                 <TabList>
                     <Tab>Category</Tab>
                     <Tab>Sub Category</Tab>
@@ -41,13 +41,13 @@ const ToyCard = ({ toy }) => {
                 <TabPanel>
                     <h2>Any content 2</h2>
                 </TabPanel>
-            </Tabs>
+            </Tabs> */}
 
 
 
 
 
-            <div className="card card-side bg-base-100 shadow-xl">
+            {/* <div className="card card-side bg-base-100 shadow-xl">
                 <figure><img className='h-40 w-40 ' src={photo} alt="photo" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
@@ -59,7 +59,7 @@ const ToyCard = ({ toy }) => {
                         <button className="btn btn-primary">View Details</button>
                     </div>
                 </div>
-            </div>
+            </div> */}
             {/* <div className="card card-side bg-base-100 shadow-xl">
                 <figure><img className='h-40 w-40 ' src={photo} alt="photo" /></figure>
                 <div className="card-body">
