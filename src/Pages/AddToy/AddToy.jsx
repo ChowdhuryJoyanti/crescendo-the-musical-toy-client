@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Swal from 'sweetalert2'
+import { AuthContext } from '../../provider/AuthProvider';
 
 const AddToy = () => {
-
+        const {user } = useContext(AuthContext);
 
     const handleAddToy = event =>{
             event.preventDefault();
@@ -96,7 +97,7 @@ const AddToy = () => {
                             <span className="label-text">Seller Email</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="email" placeholder=" Seller Email" className="input input-bordered w-full" />
+                            <input type="text" name="email" defaultValue={user.email} placeholder=" Seller Email" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>

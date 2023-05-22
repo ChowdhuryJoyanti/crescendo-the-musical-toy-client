@@ -1,10 +1,29 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import app from '../../firebase/firebase.config';
 
 const Login = () => {
 
-    const {signIn} = useContext(AuthContext);
+    const auth = getAuth(app);
+    const [users,setUsers]  = useState(null)
+    const [error,setError] = useState('');
+  
+
+
+
+
+    const {signIn,user} = useContext(AuthContext);
+    const navigate  = useNavigate()
+    const location = useLocation();
+    console.log('login',location);
+    const from = location?.state?.from?.pathname || '/';
+
+    const googleProvider = new GoogleAuthProvider();
+
+
+
 
 
 
@@ -22,6 +41,22 @@ const Login = () => {
         })
         .catch(error => console.log(error));
     }
+
+
+
+    const handleGoogleSignIn = event => {
+        event.preventDefault();
+          signInWithPopup(auth,googleProvider)
+          .then(result => {
+            const loggedInUser = result.user;
+            console.log(loggedInUser);
+            setUsers(loggedInUser)
+            Navigate(from,{replace:true})
+          })
+          .catch(error =>{
+            console.log('error',error.message);
+          })
+      }
 
 
     return (
@@ -59,6 +94,8 @@ const Login = () => {
 
                                                 <input className="btn btn-warning" type="submit" value="Login" />
                                             </div>
+
+                                            <button onClick={handleGoogleSignIn} className="btn btn-outline mt-5">Google SignIn</button>
                                         </form>
                                         <p>Don't Have an account <Link className='text-yellow-600' to="/register">Register</Link></p>
                                     </div>

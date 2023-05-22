@@ -1,5 +1,5 @@
 import React, { createContext, useInsertionEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import app from '../firebase/firebase.config';
 
  export const AuthContext = createContext();
@@ -20,11 +20,15 @@ const signIn = (email,password) => {
     return signInWithEmailAndPassword(auth,email,password);
 }
 
+const logOut = () => {
+    setLoading(true)
+    return signOut(auth);
+}
 
 useInsertionEffect(() =>{
-   const unsubscribe =  onAuthStateChanged(auth,currentUser =>{
-        setUser(currentUser);
-        console.log('current user',currentUser);
+   const unsubscribe =  onAuthStateChanged(auth,loggedUser =>{
+        setUser(loggedUser);
+        console.log('current user',loggedUser);
         setLoading(false);
     })
     return () =>{
@@ -36,6 +40,7 @@ useInsertionEffect(() =>{
         loading,
         createUser,
         signIn,
+        logOut,
     }
     return (
         <AuthContext.Provider value={authInfo}>

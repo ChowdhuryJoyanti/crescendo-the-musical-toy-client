@@ -1,15 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../../assets/logo2.jpg'
 import pImage from '../../../assets/user-2.png'
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../../provider/AuthProvider';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 
 
 const NavBar = () => {
+
+  const {user,logOut} = useContext(AuthContext);
+
+
+  const handleLogOut = () => {
+    logOut()
+    .then()
+    .catch(error => console.log(error))
+}
+ 
+
+
+
+
+
     return (
-        <container>
+        <div>
             <div>
               <h1 className='text-center text-amber-500'> <a className="btn btn-ghost normal-case text-6xl font-extrabold">Rhythmic Melody Studio</a></h1>
               </div>
@@ -62,7 +78,7 @@ const NavBar = () => {
                             <img src={pImage}/>
                         </div> */}
                     </label>
-                    <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+                    {/* <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
                         <li>
                             <a className="justify-between">
                                 Profile
@@ -71,12 +87,23 @@ const NavBar = () => {
                         </li>
                         <li><a>Settings</a></li>
                         <li><a>Logout</a></li>
-                    </ul>
+                    </ul> */}
                 </div>
                 <div className="navbar-end">
-                <img   className="w-10 h-10 rounded-full" src={pImage}/>
+
+
+            { user&&
+                  <img   className="w-10 h-10 rounded-full" src={pImage}/>
+            }
               
-                    <a className="btn">Log in</a>
+                 {user?
+                    //  <a className="btn">Log in</a>
+                     <button onClick={handleLogOut}  className="btn btn-active" href="/login">Logout</button>:
+                    <Link to="/login">
+                     <button className="btn btn-active"  href="/login">Login</button>
+                     
+                     </Link>
+                 }
                 </div>
             </div>
 
@@ -124,7 +151,7 @@ const NavBar = () => {
 
 
 
-        </container>
+        </div>
 
     );
 };
