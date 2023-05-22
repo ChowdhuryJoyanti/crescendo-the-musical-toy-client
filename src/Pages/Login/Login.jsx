@@ -7,7 +7,7 @@ import app from '../../firebase/firebase.config';
 const Login = () => {
 
     const auth = getAuth(app);
-    const [users,setUsers]  = useState(null)
+    const [users,setUsers]  = useState()
     const [error,setError] = useState('');
   
 
