@@ -27,7 +27,7 @@ const NavBar = () => {
     return (
         <div>
             <div>
-              <h1 className='text-center text-amber-500'> <a className="btn btn-ghost normal-case text-6xl font-extrabold">Rhythmic Melody Studio</a></h1>
+              <h1 className='text-center text-5xl text-gray-300 font-bold'> <a className="btn btn-ghost normal-case text-6xl font-extrabold">Rhythmic Melody Studio</a></h1>
               </div>
             <div className="navbar bg-base-100">
                 <div className="navbar-start">

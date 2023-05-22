@@ -66,9 +66,9 @@ const Category = () => {
         // </Tabs>
 
         <div>
-            <div>
-                <h2>Toys Category</h2>
-                <h4> Buy Your Toy</h4>
+            <div className='mt-5'>
+                <h2 className='text-5xl text-center text-gray-300 font-bold'>Toys Category</h2>
+               
             </div>
 
             <Tabs defaultIndex={0} onSelect={(index) => console.log(index)}>
