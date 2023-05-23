@@ -52,11 +52,12 @@ const Mytoy = () => {
                   <th>#</th>
                   <td>{toy.name}</td>
                   <td>{toy.price}</td>
-                  <td>{toy.details}</td>
+                  <td>{toy.details.slice(0,30)}</td>
                   <td>{toy.quantity}</td>
                   <td><button onClick={handleUpdate} className="btn btn-outline mt-5">Update</button></td>
                   <td><button onClick={handleDelete} className="btn btn-outline mt-5">Delete</button></td>
-                  <td>Delete</td>
+                 
+                 
                   {/* <td>{}</td>
                   <td>Littel, Schaden and Vandervort</td>
                   <td>Canada</td>

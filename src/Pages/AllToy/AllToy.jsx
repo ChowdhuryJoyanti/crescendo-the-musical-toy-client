@@ -1,27 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ToyCard from '../ToyCard/ToyCard';
 
 
 const AllToy = () => {
 
-  const toys = useLoaderData();
+  
 
   const [search, setSearch] = useState('');
-  const [searchData, setSearchData] = useState();
+  console.log(search);
+  const [toys, setToys] = useState([]);
 
-  const handleSearch = (event) => {
+
+    useEffect(()=>{
+      fetch('https://crescendo-the-musical-toy-server.vercel.app/toy')
+      .then(res => res.json())
+      .then(data => setToys(data) )
+    },[])
+
+
+  const handleSearch = () => {
         fetch(`https://crescendo-the-musical-toy-server.vercel.app/searchToys?text=${search}`)
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => setToys(data))
 
 
   }
-
-
-
-
-
   
     return (
       <div>
@@ -31,7 +35,7 @@ const AllToy = () => {
 
           <div className="form-control">
                 <div className="input-group">
-                    <input type="text" placeholder="Search…" className="input input-bordered"   value={search}
+                    <input type="text" placeholder="Search…" className="input input-bordered" 
                    onChange={(event) => setSearch(event.target.value)}/>
                    {/* <p>Search query: {searchQuery}</p> */}
                       {

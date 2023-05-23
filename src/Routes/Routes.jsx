@@ -9,6 +9,7 @@ import Mytoy from "../Pages/MyToy/Mytoy";
 import Blog from "../Pages/Blog/Blog";
 import Error from "../Pages/Error/Error";
 import PrivateRoutes from "./PrivateRoutes";
+import ViewDetails from "../Pages/ViewDetails/ViewDetails";
 
 const router = createBrowserRouter([
     {
@@ -34,13 +35,18 @@ const router = createBrowserRouter([
         },
         {
             path:'/alltoys',
-            element:<AllToy></AllToy>,
-            loader:() => fetch('https://crescendo-the-musical-toy-server.vercel.app/toy')
+            element:<AllToy></AllToy>
+            
         },
         {
             path:'/mytoys',
             element:<PrivateRoutes><Mytoy></Mytoy></PrivateRoutes>
         },
+        {
+            path:'/viewdetails',
+            element:<PrivateRoutes><ViewDetails></ViewDetails></PrivateRoutes>
+        },
+
         {
             path:'/blog',
             element:<Blog></Blog>
