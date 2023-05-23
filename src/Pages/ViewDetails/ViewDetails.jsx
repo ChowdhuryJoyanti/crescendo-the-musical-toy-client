@@ -14,6 +14,7 @@ const ViewDetails = () => {
         fetch(`https://crescendo-the-musical-toy-server.vercel.app/${id}`)
         .then(res => res.json())
         .then(data => setToyDetails(data))
+        
     },[])
 
     return (

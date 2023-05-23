@@ -65,7 +65,7 @@ const Galary = () => {
 
             </div>
 
-            <div className="gallery mt-5 rounded-lg  grid lg:grid-cols-3 gap-6 px-4 lg:px:4">
+            <div className="gallery mt-5 rounded-lg  grid lg:grid-cols-3 gap-6 px-4 lg:px:4" data-aos="flip-left">
 
                 <img className='rounded-lg' src={image1} alt="Image 1" />
                 <img className='rounded-lg' src={image2} alt="Image 2" />
