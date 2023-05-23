@@ -6,11 +6,12 @@ import ToyCard from '../ToyCard/ToyCard';
 const AllToy = () => {
 
   const toys = useLoaderData();
+
   const [search, setSearch] = useState('');
   const [searchData, setSearchData] = useState();
 
   const handleSearch = (event) => {
-        fetch(`http://localhost:5000/searchToys?text=${search}`)
+        fetch(`https://crescendo-the-musical-toy-server.vercel.app/searchToys?text=${search}`)
         .then(res => res.json())
         .then(data => console.log(data))
 

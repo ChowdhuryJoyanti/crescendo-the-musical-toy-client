@@ -13,7 +13,7 @@ const Category = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/toys/category?category=grand%20concert`)
+        fetch(`https://crescendo-the-musical-toy-server.vercel.app/toys/category?category=grand%20concert`)
             .then(res => res.json())
             .then(result => {
                 setCategory(result);
@@ -21,7 +21,7 @@ const Category = () => {
     }, [])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/toys/category?category=Classical`)
+        fetch(`https://crescendo-the-musical-toy-server.vercel.app/toys/category?category=Classical`)
             .then(res => res.json())
             .then(result => {
                 setGuiters(result);
@@ -29,7 +29,7 @@ const Category = () => {
     }, [])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/toys/category?category=string bass`)
+        fetch(`https://crescendo-the-musical-toy-server.vercel.app/toys/category?category=string bass`)
             .then(res => res.json())
             .then(result => {
                 setViolins(result);
@@ -40,7 +40,7 @@ const Category = () => {
     // console.log(result);
 
     const handleCategory = () => {
-        // const categoryUrl  = `http://localhost:5000/toy/${category}`
+        // const categoryUrl  = `https://crescendo-the-musical-toy-server.vercel.app/toy/${category}`
         // fetch(categoryUrl)
         // .then((res) => res.json())
         // .then((data) => {

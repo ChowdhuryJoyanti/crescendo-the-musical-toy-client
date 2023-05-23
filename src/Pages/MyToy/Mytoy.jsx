@@ -10,7 +10,7 @@ const Mytoy = () => {
   useEffect(() => {
 
     if (user?.email) {
-      fetch(`http://localhost:5000/mytoys/${user?.email}`)
+      fetch(`https://crescendo-the-musical-toy-server.vercel.app/mytoys/${user?.email}`)
         .then(res => res.json())
         .then(data => {
           setToys(data);

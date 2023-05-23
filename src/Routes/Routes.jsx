@@ -35,7 +35,7 @@ const router = createBrowserRouter([
         {
             path:'/alltoys',
             element:<AllToy></AllToy>,
-            loader:() => fetch('http://localhost:5000/toy')
+            loader:() => fetch('https://crescendo-the-musical-toy-server.vercel.app/toy')
         },
         {
             path:'/mytoys',

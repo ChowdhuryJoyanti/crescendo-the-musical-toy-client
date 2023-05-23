@@ -32,7 +32,7 @@ const AddToy = () => {
 
 
                 // send data to the server
-                fetch('http://localhost:5000/toy', {
+                fetch('https://crescendo-the-musical-toy-server.vercel.app/toy', {
                     method: 'POST',
                     headers:{
                         'content-type':'application/json'
