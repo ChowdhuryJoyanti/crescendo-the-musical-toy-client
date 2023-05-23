@@ -1,9 +1,42 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import ToyCard from '../ToyCard/ToyCard';
 
 const AllToy = () => {
+
+      const toys = useLoaderData();
+
     return (
         <div>
             <h3>All Toy</h3>
+
+
+
+        <h3>Shop By Category {toys.length}</h3>
+        
+
+        {
+            toys.map(toy => <ToyCard
+                key={toy._id}
+                toy={toy}
+            
+            
+            ></ToyCard>)
+        } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div className="form-control">
                 <div className="input-group">
                     <input type="text" placeholder="Search…" className="input input-bordered" />
