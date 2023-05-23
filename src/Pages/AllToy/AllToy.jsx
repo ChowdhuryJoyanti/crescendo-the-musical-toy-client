@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ToyCard from '../ToyCard/ToyCard';
+import UseTitle from '../../hooks/UseTitle';
 
 
 const AllToy = () => {
 
-  
+  UseTitle('ALL Toy')
+
 
   const [search, setSearch] = useState('');
   console.log(search);

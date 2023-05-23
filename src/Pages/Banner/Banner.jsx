@@ -4,8 +4,11 @@ import banner2 from '../../../src/assets/Guitar-1.png'
 import banner3 from '../../../src/assets/banner3.jpg'
 import banner4 from '../../../src/assets/banner4.jpg'
 import banner5 from '../../../src/assets/banner5.jpg'
+import UseTitle from '../../hooks/UseTitle';
 
 const Banner = () => {
+    UseTitle('Banner')
+
     return (
         <div className='mt-5'>
             <div className="carousel w-full">

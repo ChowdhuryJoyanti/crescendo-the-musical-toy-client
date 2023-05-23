@@ -2,10 +2,12 @@ import React from 'react';
 import contact from '../../assets/contact-us-banner.jpg'
 import contact2 from '../../assets/R.jpeg'
 import { Link } from 'react-router-dom';
+import UseTitle from '../../hooks/UseTitle';
 
 
 const Contact = () => {
 
+    UseTitle('Contact')
 
 
 

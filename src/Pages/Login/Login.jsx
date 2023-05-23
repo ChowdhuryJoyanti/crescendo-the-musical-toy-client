@@ -3,6 +3,7 @@ import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
+import UseTitle from '../../hooks/UseTitle';
 
 const Login = () => {
 
@@ -18,6 +19,7 @@ const Login = () => {
     const navigate  = useNavigate()
     const location = useLocation();
     console.log('login',location);
+    UseTitle('Login')
     const from = location?.state?.from?.pathname || '/';
 
     const googleProvider = new GoogleAuthProvider();

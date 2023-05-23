@@ -6,10 +6,15 @@ import Galary from '../Galary/Galary';
 import Category from '../Category/Category';
 import AboutUs from '../AboutUs/AboutUs';
 import Contact from '../Contact/Contact';
+import UseTitle from '../../hooks/UseTitle';
 
 const Home = () => {
 
     const toys = useLoaderData()
+
+
+    UseTitle('Home')
+
     return (
         <div>
             <Banner></Banner>

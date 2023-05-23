@@ -1,8 +1,10 @@
 import React from 'react';
 import errorImage  from '../../assets/OIP.jpeg';
 import { Link } from 'react-router-dom';
+import UseTitle from '../../hooks/UseTitle';
 
 const Error = () => {
+  UseTitle('Error')
 
   const errorMessage = "Oops! Something went wrong.";
 
