@@ -21,43 +21,7 @@ const Galary = () => {
     UseTitle('Gallery')
 
     return (
-        // <div>
-        //     <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-        //         {Array.from(Array(6)).map((_, index) => (
-        //             <Grid item  
-        //             xs={image1} sm={4} md={4} key={index}>
-        //                 <ListItem>xs=2</ListItem>
-        //             </Grid>
-        //     ))} 
-        //     </Grid>
-        //     {/* <img src= alt="" /> */}
-        // </div>
-
-
-        // <div>
-        //     <div className="gallery">
-        //         <div className="image-container">
-        //             <img src={image1} alt="Image 1"/>
-        //                 <div className="image-overlay">
-        //                     <h3 className="image-title">Image 1</h3>
-        //                 </div>
-        //         </div>
-        //         <div className="image-container">
-        //             <img src={image2}  alt="Image 2"/>
-        //                 <div className="image-overlay">
-        //                     <h3 className="image-title">Image 2</h3>
-        //                 </div>
-        //         </div>
-        //         <div className="image-container">
-        //             <img src={image3}  alt="Image 2"/>
-        //                 <div className="image-overlay">
-        //                     <h3 className="image-title">Image 2</h3>
-        //                 </div>
-        //         </div>
-
-        //     </div>
-
-        // </div>
+       
 
         <div>
             <div className='mt-5'>
@@ -77,13 +41,7 @@ const Galary = () => {
                 <img className='rounded-lg' src={image8} alt="Image 8" />
                 <img className='rounded-lg' src={image9} alt="Image 9" />
 
-                {/* <img src="path/to/image3.jpg" alt="Image 3"/>
-          <img src="path/to/image4.jpg" alt="Image 4"/>
-          <img src="path/to/image5.jpg" alt="Image 5"/>
-          <img src="path/to/image6.jpg" alt="Image 6"/>
-          <img src="path/to/image7.jpg" alt="Image 7"/>
-          <img src="path/to/image8.jpg" alt="Image 8"/>
-          <img src="path/to/image9.jpg" alt="Image 9"/> */}
+         
             </div>
         </div>
 
