@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import { TabContext, Box, TabList,Tab} from '@mui/material';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+// import React, { useState } from 'react';
+import Search from './Search';
 
-const ToyCard = () => {
+const ToyCard = ({toy}) => {
 
-    // { category }
-    // const { name, price, seller, email, category, subCategory, details, quantity, rating, photo } = NewCategory;
 
+    const { name, price, seller, email, category, subCategory, details, quantity, rating, photo } = toy;
+
+
+    const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (event) => {
+    setSearchQuery(event.target.value);
+
+  }
 
 
     return (
@@ -90,6 +99,15 @@ const ToyCard = () => {
 
 
 
+{/* <input
+        type="text"
+        placeholder="Search..."
+        value={searchQuery}
+        onChange={handleSearch}
+      />
+      <p>Search query: {searchQuery}</p> */}
+
+
 
 
 
@@ -98,7 +116,8 @@ const ToyCard = () => {
 
             <div className="form-control">
                 <div className="input-group">
-                    <input type="text" placeholder="Search…" className="input input-bordered" />
+                    <input type="text" placeholder="Search…" className="input input-bordered"   value={searchQuery}
+        onChange={handleSearch}/>
                     <button className="btn btn-square">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                     </button>
@@ -112,9 +131,9 @@ const ToyCard = () => {
                     <thead>
                         <tr>
                             <th>
-                                <label>
+                                {/* <label>
                                     <input type="checkbox" className="checkbox" />
-                                </label>
+                                </label> */}
                             </th>
                             <th> Toy Name</th>
                             <th> Sub Category</th>
@@ -136,23 +155,24 @@ const ToyCard = () => {
                                 <div className="flex items-center space-x-3">
                                     <div className="avatar">
                                         <div className="mask mask-squircle w-12 h-12">
-                                            <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
+                                            <img src={photo} alt="Avatar Tailwind CSS Component" />
                                         </div>
                                     </div>
                                     <div>
-                                        <div className="font-bold">Hart Hagerty</div>
-                                        <div className="text-sm opacity-50">United States</div>
+                                        <div className="font-bold">{name}</div>
+                                    
                                     </div>
                                 </div>
                             </td>
                             <td>
-                                Zemlak, Daniel and Leannon
-                                <br />
-                                <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
+                            {subCategory}
+                
                             </td>
-                            <td>Purple</td>
+                            <td>{price}</td>
+                            <td>{quantity}</td>
+                            <td>{seller}</td>
                             <th>
-                                <button className="btn btn-ghost btn-xs">details</button>
+                                <button  className="btn btn-outline mt-5">View Details</button>
                             </th>
                         </tr>
 

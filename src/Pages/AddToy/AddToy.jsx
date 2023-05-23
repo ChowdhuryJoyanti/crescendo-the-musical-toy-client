@@ -89,7 +89,7 @@ const AddToy = () => {
                             <span className="label-text">Seller Name</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="seller" placeholder="Seller Name" className="input input-bordered w-full" />
+                            <input type="text" name="seller" defaultValue={user.seller} placeholder="Seller Name" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 ml-4">

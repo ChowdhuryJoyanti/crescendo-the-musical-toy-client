@@ -61,7 +61,7 @@ const Contact = () => {
                     <div className="hero min-h-screen">
                             <div className="hero-content flex-col ">
                                 <div className="text-center lg:text-left">
-                                    <h1 className="text-5xl font-bold">Login now!</h1>
+                                    <h1 className="text-3xl font-bold">Connect With Us</h1>
                                 </div>
                                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                                     <div className="card-body">
@@ -131,9 +131,7 @@ const Contact = () => {
 </div>
 
 
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Listen</button>
-                    </div>
+                
                 </div>
             </div>
         </div>
