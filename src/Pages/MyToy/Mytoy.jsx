@@ -2,57 +2,70 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
 
 const Mytoy = () => {
-    const {user} = useContext(AuthContext);
-    const [toys,setToys] = useState([])
-        console.log();
+  const { user } = useContext(AuthContext);
+  const [toys, setToys] = useState([])
+  console.log();
 
 
-        useEffect(() =>{
-            
-            if(user?.email){
-                fetch(`http://localhost:5000/mytoys/${user?.email}`)
-            .then(res => res.json())
-            .then(data => {
-               setToys(data);
-            })
+  useEffect(() => {
+
+    if (user?.email) {
+      fetch(`http://localhost:5000/mytoys/${user?.email}`)
+        .then(res => res.json())
+        .then(data => {
+          setToys(data);
+        })
+    }
+  }, [user?.email])
+
+
+  const handleDelete = () => {
+
+  }
+  const handleUpdate = () => {
+
+  }
+
+
+  return (
+    <div>
+      <div className="text-center ">
+        <h1 className="text-5xl font-bold ">My Toy</h1>
+      </div>
+      <div className="overflow-x-auto mt-5">
+        <table className="table table-compact w-full">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Details</th>
+              <th>Available Quantity</th>
+              <th> Update</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              toys.map((toy) => (
+                <tr>
+                  <th>#</th>
+                  <td>{toy.name}</td>
+                  <td>{toy.price}</td>
+                  <td>{toy.details}</td>
+                  <td>{toy.quantity}</td>
+                  <td><button onClick={handleUpdate} className="btn btn-outline mt-5">Update</button></td>
+                  <td><button onClick={handleDelete} className="btn btn-outline mt-5">Delete</button></td>
+                  <td>Delete</td>
+                  {/* <td>{}</td>
+                  <td>Littel, Schaden and Vandervort</td>
+                  <td>Canada</td>
+                  <td>12/16/2020</td>
+                  <td>Blue</td> */}
+                </tr>
+              ))
             }
-        },[user?.email])
-
-
-
-
-
-    return (
-        <div>
-            <h3>my ty</h3>
-            <div className="overflow-x-auto">
-  <table className="table table-compact w-full">
-    <thead>
-      <tr>
-        <th></th> 
-        <th>Name</th> 
-        <th>Job</th> 
-        <th>company</th> 
-        <th>location</th> 
-        <th>Last Login</th> 
-        <th>Favorite Color</th>
-      </tr>
-    </thead> 
-    <tbody>
-                {
-                    toys.map((toy)=> (
-                        <tr>
-                        <th>1</th> 
-                        <td>Cy Ganderton</td> 
-                        <td>Quality Control Specialist</td> 
-                        <td>Littel, Schaden and Vandervort</td> 
-                        <td>Canada</td> 
-                        <td>12/16/2020</td> 
-                        <td>Blue</td>
-                      </tr>
-                    ))
-                }
-      {/* <tr>
+            {/* <tr>
         <th>2</th> 
         <td>Hart Hagerty</td> 
         <td>Desktop Support Technician</td> 
@@ -235,11 +248,11 @@ const Mytoy = () => {
         <th>Favorite Color</th>
       </tr>
     </tfoot> */}
-    </tbody>
-  </table>
-</div>
-        </div>
-    );
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 };
 
 export default Mytoy;

@@ -33,11 +33,17 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
+        if(!password === password){
+            setError('password did not matched')
+            return setError();
+      }
+
         console.log(email, password,);
         signIn(email,password)
         .then(result =>{
-            const user = result.user;
-            console.log(user);
+            const loggedUser = result.user;
+            console.log(loggedUser);
+            navigate(from,{replace:true})
         })
         .catch(error => console.log(error));
     }
